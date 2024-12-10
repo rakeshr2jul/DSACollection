@@ -17,12 +17,34 @@ public class CoinChange2 {
        return dp[amount];
     }
 
+    public static int changeRec(int[] coins,int amount) {
+
+        return rec(coins,amount,0);
+    }
+
+    private static int rec(int coins[],int amt, int i){
+       if(amt==0)
+           return 1;
+
+       if(i==coins.length){
+           return 0;
+       }
+       if(amt < 0)
+         return 0;
+
+        int stay = rec(coins,amt -coins[i],i);
+        int move = rec(coins,amt,i+1);
+
+        return stay+move;
+    }
+
+
     public static void main(String args[]){
 
-        int amount = 0;
-        int coins[] = {7};
+        int amount = 5;
+        int coins[] = {1,2,5};
 
-        System.out.println(change(coins,amount));
+        System.out.println(changeRec(coins,amount));
 
     }
 }
