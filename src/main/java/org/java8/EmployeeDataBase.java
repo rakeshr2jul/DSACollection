@@ -1,10 +1,13 @@
 package org.java8;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class EmployeeDataBase {
 
+    Map hs = new HashMap();
     public static List<Employee> getAllEmployees() {
         Project p1 = new Project("P001", "Alpha", "ABC Corp", "Alice");
         Project p2 = new Project("P002", "Beta", "XYZ Ltd", "Bob");

@@ -44,7 +44,7 @@ public class CoinChange {
         ans = Math.min(ans,countCoin);
 
        }
-       return  ans+1;
+       return ans >=100001 ? -1 : ans+1;
 
     }
 

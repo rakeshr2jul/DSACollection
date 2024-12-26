@@ -7,6 +7,7 @@ public class LT154FindMinRotatedArray {
         int end =nums.length-1;
 
         while (st< end){
+            System.out.println("===="+(end-st)%2);
             int mid = st + (end-st)/2;
             if(nums[mid] > nums[end]){
                 st= mid +1;
@@ -20,7 +21,7 @@ public class LT154FindMinRotatedArray {
     }
 
     public static void main(String args[]){
-     int nums [] ={3,3,3,3,3,3,4,1,2,3};
+     int nums [] ={3,4,5,1,2};
 
      System.out.println(findMin(nums));
     }

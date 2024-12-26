@@ -1,6 +1,7 @@
 package org.java8;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -12,9 +13,9 @@ public class Java8MethodCheatSheet {
         List<Employee> employees = EmployeeDataBase.getAllEmployees();
 
         // forEach
-        //employees.forEach(e-> System.out.println(e.getName()+" : "+e.getSalary()));
+        employees.forEach(e-> System.out.println(e.getName()+" : "+e.getSalary()));
 
-        //employees.stream().forEach(System.out::println);
+        employees.stream().forEach(System.out::println);
 
         //filter
         //.collect

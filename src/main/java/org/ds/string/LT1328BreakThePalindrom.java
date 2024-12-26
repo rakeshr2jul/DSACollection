@@ -7,6 +7,7 @@ public class LT1328BreakThePalindrom {
         int len = palindrome.length();
         if(len <= 1)
             return "";
+
         StringBuilder sb = new StringBuilder(palindrome);
         for(int i =0;i<len/2;i++){
            if(sb.charAt(i) !='a'){

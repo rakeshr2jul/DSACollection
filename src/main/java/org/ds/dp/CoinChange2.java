@@ -1,5 +1,7 @@
 package org.ds.dp;
 
+import java.util.Arrays;
+
 public class CoinChange2 {
 
     public static int change(int[] coins,int amount) {
@@ -18,11 +20,14 @@ public class CoinChange2 {
     }
 
     public static int changeRec(int[] coins,int amount) {
-
-        return rec(coins,amount,0);
+      int dp[][] = new int[coins.length][amount+1];
+       for(int i =0;i<dp.length;i++) {
+           Arrays.fill(dp[i], -1);
+       }
+        return rec(coins,amount,0,dp);
     }
 
-    private static int rec(int coins[],int amt, int i){
+    private static int rec(int coins[],int amt, int i,int dp[][]){
        if(amt==0)
            return 1;
 
@@ -32,10 +37,14 @@ public class CoinChange2 {
        if(amt < 0)
          return 0;
 
-        int stay = rec(coins,amt -coins[i],i);
-        int move = rec(coins,amt,i+1);
+       if(dp[i] [amt] != -1){
+           return dp[i][amt];
+       }
 
-        return stay+move;
+        int stay = rec(coins,amt -coins[i],i,dp);
+        int move = rec(coins,amt,i+1,dp);
+
+        return dp[i][amt] = stay+move;
     }
 
 

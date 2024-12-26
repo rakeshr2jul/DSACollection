@@ -29,6 +29,28 @@ public class LevelOrder {
         return res;
     }
 
+    public static List<List<Integer>> levelOrderRec(TreeNode root){
+
+        List<List<Integer>> res = new ArrayList<>();
+
+        helper(root,res,0);
+        return res;
+    }
+
+    private static void helper(TreeNode node, List<List<Integer>> res,int level){
+
+        if(node ==null)
+            return;
+
+        if(res.size() <= level)
+            res.add(new ArrayList<>());
+          res.get(level).add(node.val);
+        helper(node.left,res,level+1);
+        helper(node.right,res,level+1);
+
+
+    }
+
 
 
 
@@ -40,6 +62,7 @@ public class LevelOrder {
             root.right = new TreeNode(3);
 
             System.out.println(levelOrder(root));
+            System.out.println( levelOrderRec(root));
 
 
         }
