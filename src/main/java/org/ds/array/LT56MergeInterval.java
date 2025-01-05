@@ -59,14 +59,12 @@ public class LT56MergeInterval {
                 result.add(newInterval);
             }
         }
-
         return result.toArray(new int[result.size()][]);
-
     }
 
 
     public static void main(String args[]){
-        int intervals [][] = {{1,3},{2,6},{8,10},{15,18}};
+        int intervals [][] = {{1,3},{2,6},{7,11},{8,10},{15,18}};
 
       int res[][]=  merge1(intervals);
         for(int[] row : res){// i=0;i<res.length;i++){

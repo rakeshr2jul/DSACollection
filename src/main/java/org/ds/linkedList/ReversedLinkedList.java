@@ -9,19 +9,20 @@ public class ReversedLinkedList {
             return head;
         }
 
-        ListNode prev = null;
-        ListNode present = head;
-        ListNode next = present.next;
+        ListNode preNode = null;
+        ListNode currentNode = head;
 
-        while ( present !=null){
-            present.next = prev;
-            prev =present;
-            present = next;
-            if(next!=null)
-                next=next.next;
+
+        while ( currentNode !=null){
+            ListNode nextNode = currentNode.next;
+            currentNode.next = preNode;
+            preNode =currentNode;
+            currentNode = nextNode;
+
         }
 
-        return prev;
+       head = preNode;
+        return head;
     }
     public static void main(String[] args) {
 

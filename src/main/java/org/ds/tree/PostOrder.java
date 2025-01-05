@@ -38,15 +38,15 @@ public class PostOrder {
     }
 
     public static void main(String args[]){
-        TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.left.left = new TreeNode(4);
-        root.left.right = new TreeNode(5);
-        root.right = new TreeNode(3);
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(9);
+        //root.left.left = new TreeNode(4);
+       // root.left.right = new TreeNode(5);
+        root.right = new TreeNode(15);
         List<Integer> pre = new ArrayList<>();
 
         System.out.println(postOrder(pre,root));
-        System.out.println(postOrderIter(root));
+      //  System.out.println(postOrderIter(root));
 
 
     }

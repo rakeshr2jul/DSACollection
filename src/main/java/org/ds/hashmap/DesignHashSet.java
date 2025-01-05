@@ -1,14 +1,19 @@
 package org.ds.hashmap;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
 public class DesignHashSet {
 
+
+
   private static  int SIZE =100;
   private List<Integer>[] set ;
     public DesignHashSet() {
         set = new LinkedList[SIZE];
+       // HashSet<Integer> s = new HashSet<>();
+
     }
 
     private int getHash(int key){

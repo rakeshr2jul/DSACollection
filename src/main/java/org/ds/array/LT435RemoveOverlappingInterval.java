@@ -12,7 +12,7 @@ public class LT435RemoveOverlappingInterval {
             return 0;
         }
         //Arrays.sort(intervals, (a,b) -> a[1]-b[1]);
-        Arrays.sort(intervals, Comparator.comparingInt(i->i[1]));
+       Arrays.sort(intervals, Comparator.comparingInt(i->i[1]));
         int res=0;
 
         int end = Integer.MIN_VALUE;
@@ -33,7 +33,7 @@ public class LT435RemoveOverlappingInterval {
 
     public static void main(String[] args) {
 
-        int intervals[][] = {{1,2},{2,3},{3,4},{1,3}};
+        int intervals[][] = {{1,3},{2,3},{3,4},{1,2}};
         int  res =   eraseOverlapIntervals(intervals);
 
         System.out.println(res);

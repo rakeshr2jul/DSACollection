@@ -23,7 +23,7 @@ public class MeetingRoom {
 
 
     public static void main(String[] args) {
-        int [][] ints = {{0,30},{5,10},{15,20}};
+        int [][] ints = {{5,8},{10,11},{2,4},{7,8}};//{{0,30},{5,10},{15,20}};
 
         System.out.println(canAttendMeetings(ints));
     }

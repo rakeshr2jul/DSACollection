@@ -1,16 +1,46 @@
 package org.ds.tree;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ConstructTree {
 
     // Construct tree with inorder and pre-order
 
      public static TreeNode buildTree(int preorder[],int inorder[]){
+          Map<Integer,Integer> inOrderMap = new HashMap<>();
+          for(int i =0; i< inorder.length;i++){
+              inOrderMap.put(inorder[i],i);
+          }
+          return  splitTree(preorder,inOrderMap,0,0,inorder.length-1);
+        //return createTree(preorder,inorder,0,n-1,0,n-1);
 
-         int n = preorder.length;
+     }
+
+     private static TreeNode splitTree(int preorder[], Map<Integer,Integer> hs, int rootIdx,int left,int right ){
+
+              TreeNode root = new TreeNode( preorder[rootIdx]);
+              int mid = hs.get(preorder[rootIdx]);
+
+              if(mid > left){
+                  root.left = splitTree(preorder,hs,rootIdx+1,left,mid-1);
+              }
+         if(mid < right){
+             root.right = splitTree(preorder,hs,rootIdx+mid-left+1,mid+1,right);
+
+         }
+
+              return  root;
+
+     }
+
+    public static TreeNode buildTree1(int preorder[],int inorder[]){
+
+        int n = preorder.length;
 
         return createTree(preorder,inorder,0,n-1,0,n-1);
 
-     }
+    }
 
      public static TreeNode createTree(int preorder[],int inorder[],int ps,int pe,int is,int ie){
 
@@ -56,12 +86,27 @@ public class ConstructTree {
 
      }
 
+    public static void postOrder(TreeNode root){
+        if(root!=null){
+            postOrder(root.left);
+            postOrder(root.right);
+            System.out.print(root.val+" ");
+        }
+
+    }
     public static void main(String args[]){
-       int in[]={4, 2, 5, 1, 3};
-       int pre[] = {1, 2, 4, 5, 3};
+       int in[]={9,3,15,20,7};
+       int pre[] = {3,9,20,15,7};
 
        TreeNode root = buildTree(pre,in);
           preOrder(root);
+
+        System.out.println();
+        TreeNode root1 = buildTree1(pre,in);
+       // preOrder(root1);
+
+        postOrder(root1);
+
     }
 
 }

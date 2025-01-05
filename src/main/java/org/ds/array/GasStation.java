@@ -9,11 +9,11 @@ public class GasStation {
             sum += gas[i] - cost[i];
             if(sum < 0){
                 total +=sum;
-                System.out.println("==tot==="+total);
+                //System.out.println("==tot==="+total);
                 sum=0;
                 position = i+1;
             }
-            System.out.println("==sum==="+sum);
+            //System.out.println("==sum==="+sum);
         }
         total +=sum;
 

@@ -1,13 +1,11 @@
 package org.ds.hashmap;
 
-import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.Map;
 
 public class DesignHashMap {
 
-   LinkedList<Entry> map [];
-   static int SIZE = 16;
+    LinkedList<Entry> map [];
+    static int SIZE = 16;
     public DesignHashMap() {
         map = new LinkedList[SIZE];
 

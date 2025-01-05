@@ -9,9 +9,9 @@ public class MeetingRoomII {
 
     public  static int minMeetingRooms(int[][] intervals){
 
-        Arrays.sort(intervals, (a,b)-> a[0]- b[0]);
 
-        int newInterval[] = intervals[0];
+
+       /* int newInterval[] = intervals[0];
 
         int res =1;
         //[5,8],[6,8]
@@ -27,8 +27,10 @@ public class MeetingRoomII {
                 newInterval= intervals[i];
             }
         }
-        return res;
-        /*PriorityQueue<Integer> pq = new PriorityQueue<>();
+        return res; */
+        // time complexit O(n-logn)
+        Arrays.sort(intervals,(a,b)-> a[0]- b[0]);
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
 
         for(int[] interval: intervals ){
             if(pq.isEmpty()){
@@ -40,7 +42,7 @@ public class MeetingRoomII {
             }
             pq.add(interval[1]);
         }
-        return pq.size();*/
+        return pq.size();
     }
     public static void main(String[] args) {
 

@@ -23,6 +23,6 @@ public class IntegerToRoman {
 
     public static void main(String args[]){
 
-        System.out.println(intToRoman(58136));
+        System.out.println(intToRoman(1994));
     }
 }
